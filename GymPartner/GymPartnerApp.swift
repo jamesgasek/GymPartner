@@ -7,16 +7,34 @@
 
 import SwiftUI
 import FirebaseAuth
+import FirebaseCore
+
 
 @main
 struct GymPartnerApp: App {
+    
+    // Store the authentication state
+    // Store the authentication state
+    @State private var userAuthenticated = false
+    
     var body: some Scene {
         WindowGroup {
-            if Auth.auth().currentUser != nil {
+            if userAuthenticated {
                 MainView()
+                    .transition(.identity)
+                    .onAppear{
+                        print("mainview")
+                    }
             } else {
-                AuthView()
+                AuthView(userAuthenticated: $userAuthenticated)
+                    .onAppear{
+                        print("authview")
+                    }
             }
         }
+    }
+    
+    init() {
+        FirebaseApp.configure()
     }
 }

@@ -4,58 +4,79 @@
 //
 //  Created by James Gasek on 1/15/23.
 //
-
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+
+
+
 
 struct AuthView: View {
+    //@ObservedObject var loginDelegate: LoginDelegate
+    @Binding var userAuthenticated: Bool
+
+    @State private var phone = ""
+    //@State private var isAuthenticated = false
     
-    @State private var email: String = ""
-    @State private var password: String = ""
-    
-    
+    func authenticateGuest(){
+        Auth.auth().signInAnonymously() { (result, error) in
+            if error == nil {
+                //self.isAuthenticated = true
+                self.userAuthenticated = true
+            }
+        }
+    }
+
     var body: some View {
-        VStack {
-            Text("GymPartner")
-                .font(.largeTitle.italic())
-                .fontWeight(.bold)
-                .foregroundColor(.black)
-                .padding(.bottom, 20)
-                .padding(.top, 0)
-                
-            TextField("EMAIL", text: $email)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(5.0)
-                .padding(.horizontal, 20)
-            SecureField("PASSWORD", text: $password)
-                .padding()
-                //.font(.title.italic())
-                .background(Color(.systemGray6))
-                .cornerRadius(5.0)
-                //20 padding on only left and right
-                .padding(.horizontal, 20)
-                
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("SIGN IN")
-                    .font(.title.italic())
-                    .fontWeight(.black)
-                    .foregroundColor(.black)
-                    .frame(width: 220, height: 60)
-            })
-            .background(Color("Green"))
-            .cornerRadius(15.0)
-            .padding(20)
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Text("SIGN UP")
+        NavigationView{
+            VStack {
+                Text("GymPartner")
+                    .font(.largeTitle.italic())
                     .fontWeight(.bold)
-                    .foregroundColor(Color(.systemGray2))
-            })
+                    .foregroundColor(Color("Black"))
+                    .padding(.bottom, 20)
+                    .padding(.top, 0)
+                
+                TextField("PHONE #", text: $phone)
+                    .padding()
+                    .background(Color(.systemGray6))
+                    .cornerRadius(5.0)
+                    .padding(.horizontal, 20)
+                Button(action: {
+                    //self.authenticate()
+                }, label:({
+                        Text("SIGN IN")
+                            .font(.title.italic())
+                            .fontWeight(.black)
+                            .foregroundColor(.black)
+                            .frame(width: 220, height: 60)
+                    }))
+                
+                
+                .background(Color("Green"))
+                .cornerRadius(0.0)
+                .padding(20)
+
+                Button(action: {
+                    self.authenticateGuest()
+                }, label:({
+                        Text("CONTINUE AS GUEST")
+                            .fontWeight(.black)
+                            .foregroundColor(Color(.systemGray3))
+                            .font(.system(size: 16))
+                    }))
+                
+            }
         }
     }
 }
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView()
+        Group {
+            AuthView(userAuthenticated: $isAuthenticated)
+        }
+        //.environment(\.colorScheme, .dark)
     }
+    @State static var isAuthenticated = false
 }

@@ -18,6 +18,7 @@
 		C3BF8C722974BADB00B850E7 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C712974BADB00B850E7 /* SignUpView.swift */; };
 		C3BF8C742974CFB000B850E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C732974CFB000B850E7 /* MainView.swift */; };
 		C3BF8C762974D14000B850E7 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C752974D13F00B850E7 /* AuthView.swift */; };
+		C3BF8C782975BF8400B850E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */; };
 		D7ACA6A7B74C876F49376DDD /* Pods_GymPartner_GymPartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B443501E8F58C24E76D8E09 /* Pods_GymPartner_GymPartnerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		C3BF8C712974BADB00B850E7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		C3BF8C732974CFB000B850E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C3BF8C752974D13F00B850E7 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3F178B861CF37CC548314D1 /* Pods_GymPartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymPartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D797FC6054B6C6D67D037717 /* Pods-GymPartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-GymPartnerTests/Pods-GymPartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBD319F01D09FA488EA296B8 /* Pods-GymPartner-GymPartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartner-GymPartnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GymPartner-GymPartnerUITests/Pods-GymPartner-GymPartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		C3BF8C442974ACC100B850E7 /* GymPartner */ = {
 			isa = PBXGroup;
 			children = (
+				C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */,
 				C3BF8C452974ACC100B850E7 /* GymPartnerApp.swift */,
 				C3BF8C752974D13F00B850E7 /* AuthView.swift */,
 				C3BF8C712974BADB00B850E7 /* SignUpView.swift */,
@@ -284,6 +287,7 @@
 			files = (
 				C3BF8C4D2974ACC400B850E7 /* Preview Assets.xcassets in Resources */,
 				C3BF8C4A2974ACC400B850E7 /* Assets.xcassets in Resources */,
+				C3BF8C782975BF8400B850E7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

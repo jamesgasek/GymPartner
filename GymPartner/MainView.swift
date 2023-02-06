@@ -7,126 +7,151 @@
 
 import SwiftUI
 
+struct Workout : Hashable{
+    var name: String
+    var exercises: [Exercise]
+    
+    func hash(into hasher: inout Hasher) {
+            hasher.combine(name)
+    }
+    
+    static func == (lhs: Workout, rhs: Workout) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
+
+struct Exercise : Identifiable {
+    var id = UUID()
+    var name: String
+    var sets: [Set]
+}
+
+struct Set: Identifiable {
+    var id = UUID()
+    var weight: Int
+    var repsCompleted: Int
+    var repsTargeted: Int?
+    var delayBefore: Int?
+}
+
 struct MainView: View {
+    @Binding var auth: Bool
+    
     @State private var selectedWorkout: String? = nil
     
-    //make binding string 'toAdd' to add to the list
- 
+    @State private var showingAddWorkoutPage = false
+    
+    
+    @State var Splitlist: [Workout] =
+    [Workout(
+        name: "Chest",
+        exercises: [
+            Exercise(name: "Bench Press", sets: [
+                Set(weight: 100, repsCompleted: 10),
+                Set(weight: 100, repsCompleted: 10),
+                Set(weight: 100, repsCompleted: 10),
+                Set(weight: 100, repsCompleted: 10),
+            ])
+        ]
+    )]
+
+        
+    
+
     var body: some View {
- 
         TabView {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
                     Text("Home")
                 }
-            WorkoutList()
+            WorkoutList(Splits: $Splitlist)
                 .tabItem {
                     Image(systemName: "dumbbell")
                     Text("Workout")
                 }
-            SettingsView()
+            SettingsView(auth: $auth)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
-                }
+            }
         }
     }
 }
 
 struct WorkoutView : View {
-    var workoutType: String
+    var workoutType: Workout
 
-    var body: some View {
-        Text(workoutType)
-        .navigationTitle(workoutType)
-    }
-}
-
-struct WorkoutList: View {
-    
-    private var Workouts: [String] = [ "Chest", "Back", "Legs", "Arms", "Shoulders", "Abs", "Cardio"]
-    
-    @State private var toAdd: String = ""
+    @State private var exerciseName: String = ""
+    @State private var sets: [Int] = []
+    @State private var weights: [Int] = []
+    @State private var showAddExercise = false
+    @State private var selectedExercise: Exercise?
 
     
     var body: some View {
-        NavigationStack {
-            List(Workouts, id: \.self) { Workout in
-                NavigationLink {
-                    WorkoutView(workoutType: Workout)
-                    
-                } label: {
-                    Text(Workout)
-                }
-                
-            }
-            .listStyle(.insetGrouped)
-            
-            //button to add a workout to the list
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink {
-                        VStack{
-                            TextField("add workout", text: $toAdd)
-                                .padding()
-                                .background(Color(.systemGray6))
-                                .cornerRadius(5.0)
-                                .padding(.horizontal, 20)
-                            
-                            
+        NavigationView {
+            List {
+                ForEach(workoutType.exercises) { exercise in
+                    HStack {
+                        NavigationLink(destination: ExerciseView(exercise: self.$selectedExercise)) {
+                            Text(exercise.name)
+                            Spacer()
+                            Spacer()
+                            Text("\(exercise.sets.count)x\(exercise.sets[0].repsCompleted)")
+                            Text("\(exercise.sets[0].weight)lbs")
                         }
-                        
-                    } label: {
-                        Image(systemName: "plus")
+                    }.onTapGesture {
+                        self.selectedExercise = exercise
                     }
                 }
-            }.navigationTitle("Workouts")
+            }
+
+            .sheet(isPresented: $showAddExercise) {
+                //add workout sheet
+            }
         }
+        
+        .navigationTitle(workoutType.name)
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.showAddExercise = true
+            }, label: {
+                Image(systemName: "plus")
+                    .imageScale(.large)
+            })
+        )
     }
 }
 
-struct SettingsView: View {
+struct ExerciseView: View{
+    @Binding var exercise: Exercise?
+    
     var body: some View {
-            NavigationStack{
-                //Text("Settings")
-                List{
-                    Section(header: Text("Account")) {
-                        NavigationLink(destination: Text("Profile")) {
-                            Text("Profile")
-                        }
-                        NavigationLink(destination: Text("Sign Out")) {
-                            Text("Sign Out")
-                        }
-                    }
-                    
-                    Section(header: Text("GymPartner")) {
-                        NavigationLink(destination: Text("Notifications")) {
-                            Text("Notifications")
-                        }
-                        //insert gap between sections
-                        NavigationLink(destination: Text("Help")) {
-                            Text("Help")
-                        }
-                        NavigationLink(destination: Text("About")) {
-                            Text("About")
-                        }
-                    }
-                }
+            if let exercise = exercise {
+                Text("Home")
+                .navigationTitle(exercise.name)
+            } else {
+                Text("No exercise selected")
             }
-    }
+        }
 }
+
 
 struct HomeView: View{
     var body: some View {
         Text("Home")
+        .navigationTitle("Home")
     }
 }
 
 
 struct MainView_Previews: PreviewProvider {
+
+    @State static var auth = true
+
     static var previews: some View {
-        MainView()
+        MainView(auth: $auth)
             .previewDevice("iPhone 14")
     }
 }

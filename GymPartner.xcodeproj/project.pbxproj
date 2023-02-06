@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55E4E96A1243CDE66ED5FCBD /* Pods_GymPartner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F178B861CF37CC548314D1 /* Pods_GymPartner.framework */; };
 		8EB494C400A8421D53C00118 /* Pods_GymPartnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A52EB1DD08FA935291FEF5A /* Pods_GymPartnerTests.framework */; };
+		C39F4D6A2979C33400B22371 /* AuthCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F4D692979C33400B22371 /* AuthCodeView.swift */; };
 		C3BF8C462974ACC100B850E7 /* GymPartnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C452974ACC100B850E7 /* GymPartnerApp.swift */; };
 		C3BF8C4A2974ACC400B850E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3BF8C492974ACC400B850E7 /* Assets.xcassets */; };
 		C3BF8C4D2974ACC400B850E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3BF8C4C2974ACC400B850E7 /* Preview Assets.xcassets */; };
@@ -19,6 +20,8 @@
 		C3BF8C742974CFB000B850E7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C732974CFB000B850E7 /* MainView.swift */; };
 		C3BF8C762974D14000B850E7 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3BF8C752974D13F00B850E7 /* AuthView.swift */; };
 		C3BF8C782975BF8400B850E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */; };
+		C3D79A4829876DA700E3F0A1 /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D79A4729876DA700E3F0A1 /* WorkoutList.swift */; };
+		C3D79A4D29876EF200E3F0A1 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D79A4C29876EF200E3F0A1 /* SettingsView.swift */; };
 		D7ACA6A7B74C876F49376DDD /* Pods_GymPartner_GymPartnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B443501E8F58C24E76D8E09 /* Pods_GymPartner_GymPartnerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +48,9 @@
 		6B443501E8F58C24E76D8E09 /* Pods_GymPartner_GymPartnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymPartner_GymPartnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB07C6B63B7878B531B786B /* Pods-GymPartner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartner.release.xcconfig"; path = "Target Support Files/Pods-GymPartner/Pods-GymPartner.release.xcconfig"; sourceTree = "<group>"; };
 		B2367588360A8B00F2013B31 /* Pods-GymPartner-GymPartnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartner-GymPartnerUITests.release.xcconfig"; path = "Target Support Files/Pods-GymPartner-GymPartnerUITests/Pods-GymPartner-GymPartnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C39F4D692979C33400B22371 /* AuthCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeView.swift; sourceTree = "<group>"; };
+		C39F4D6B2979CB6200B22371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C39F4D6C2979CD7900B22371 /* GymPartner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GymPartner.entitlements; sourceTree = "<group>"; };
 		C3BF8C422974ACC100B850E7 /* GymPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3BF8C452974ACC100B850E7 /* GymPartnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GymPartnerApp.swift; sourceTree = "<group>"; };
 		C3BF8C492974ACC400B850E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +64,8 @@
 		C3BF8C732974CFB000B850E7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C3BF8C752974D13F00B850E7 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3D79A4729876DA700E3F0A1 /* WorkoutList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutList.swift; sourceTree = "<group>"; };
+		C3D79A4C29876EF200E3F0A1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D3F178B861CF37CC548314D1 /* Pods_GymPartner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymPartner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D797FC6054B6C6D67D037717 /* Pods-GymPartnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartnerTests.debug.xcconfig"; path = "Target Support Files/Pods-GymPartnerTests/Pods-GymPartnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DBD319F01D09FA488EA296B8 /* Pods-GymPartner-GymPartnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymPartner-GymPartnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-GymPartner-GymPartnerUITests/Pods-GymPartner-GymPartnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,13 +148,17 @@
 		C3BF8C442974ACC100B850E7 /* GymPartner */ = {
 			isa = PBXGroup;
 			children = (
+				C39F4D6C2979CD7900B22371 /* GymPartner.entitlements */,
+				C39F4D6B2979CB6200B22371 /* Info.plist */,
 				C3BF8C772975BF8400B850E7 /* GoogleService-Info.plist */,
 				C3BF8C452974ACC100B850E7 /* GymPartnerApp.swift */,
 				C3BF8C752974D13F00B850E7 /* AuthView.swift */,
+				C39F4D692979C33400B22371 /* AuthCodeView.swift */,
 				C3BF8C712974BADB00B850E7 /* SignUpView.swift */,
 				C3BF8C492974ACC400B850E7 /* Assets.xcassets */,
 				C3BF8C4B2974ACC400B850E7 /* Preview Content */,
 				C3BF8C732974CFB000B850E7 /* MainView.swift */,
+				C3D79A4B29876ED600E3F0A1 /* MainViewChildren */,
 			);
 			path = GymPartner;
 			sourceTree = "<group>";
@@ -174,6 +186,15 @@
 				C3BF8C622974ACC500B850E7 /* GymPartnerUITestsLaunchTests.swift */,
 			);
 			path = GymPartnerUITests;
+			sourceTree = "<group>";
+		};
+		C3D79A4B29876ED600E3F0A1 /* MainViewChildren */ = {
+			isa = PBXGroup;
+			children = (
+				C3D79A4729876DA700E3F0A1 /* WorkoutList.swift */,
+				C3D79A4C29876EF200E3F0A1 /* SettingsView.swift */,
+			);
+			path = MainViewChildren;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,8 +436,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3D79A4D29876EF200E3F0A1 /* SettingsView.swift in Sources */,
+				C39F4D6A2979C33400B22371 /* AuthCodeView.swift in Sources */,
 				C3BF8C762974D14000B850E7 /* AuthView.swift in Sources */,
 				C3BF8C742974CFB000B850E7 /* MainView.swift in Sources */,
+				C3D79A4829876DA700E3F0A1 /* WorkoutList.swift in Sources */,
 				C3BF8C722974BADB00B850E7 /* SignUpView.swift in Sources */,
 				C3BF8C462974ACC100B850E7 /* GymPartnerApp.swift in Sources */,
 			);
@@ -575,17 +599,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GymPartner/GymPartner.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GymPartner/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R78TU7V89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymPartner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +621,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jamesgasek.GymPartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,17 +634,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GymPartner/GymPartner.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GymPartner/Preview Content\"";
 				DEVELOPMENT_TEAM = 8R78TU7V89;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GymPartner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,6 +656,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jamesgasek.GymPartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
